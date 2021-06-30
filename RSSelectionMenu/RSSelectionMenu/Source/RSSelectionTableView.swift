@@ -131,6 +131,12 @@ open class RSSelectionTableView<T: Equatable>: UITableView {
 // MARK: - Private
 extension RSSelectionTableView {
     
+    /// Set all selected items 
+    func setAllSelectedItems(items: DataSource<T>) {
+        
+        self.selectionDelegate?.selectedItems = items
+    }
+    
     /// Set selected items and selection event
     func setSelectedItems(items: DataSource<T>, maxSelected: UInt?, onDidSelectRow delegate: @escaping UITableViewCellSelection<T>) {
         self.selectionDelegate?.selectionDelegate = delegate
