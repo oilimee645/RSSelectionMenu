@@ -319,7 +319,11 @@ open class RSSelectionMenu<T: Equatable>: UIViewController, UIPopoverPresentatio
 
 // MARK:- Public
 extension RSSelectionMenu {
-    
+	
+    /// Set all items and selection event
+    public func setAllSelectedItems(items: DataSource<T>) {
+        self.tableView?.setAllSelectedItems(items: items)
+    }
     /// Set selected items and selection event
     public func setSelectedItems(items: DataSource<T>, maxSelected: UInt? = nil, onDidSelectRow delegate: @escaping UITableViewCellSelection<T>) {
         let maxLimit = maxSelected ?? maxSelectionLimit
